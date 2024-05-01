@@ -69,7 +69,7 @@
     "jwt-decode": "^3.1.2"
   },
   "devDependencies": {
-    "@apollo/client": "^3.9.9",
+    "@apollo/client": "^3.10.1",
     "@nhost/nhost-js": "workspace:*"
   }
 }

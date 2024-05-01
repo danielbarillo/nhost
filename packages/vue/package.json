@@ -74,9 +74,9 @@
     "@nhost/docgen": "workspace:*",
     "@vitejs/plugin-vue": "^4.6.2",
     "@xstate/inspect": "^0.8.0",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
-    "ws": "^8.16.0",
+    "vue": "^3.4.26",
+    "vue-router": "^4.3.2",
+    "ws": "^8.17.0",
     "xstate": "^4.38.3"
   }
 }
