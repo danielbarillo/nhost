@@ -3,7 +3,6 @@ import React, { PropsWithChildren } from 'react'
 import {
   cacheExchange,
   createClient as createUrqlClient,
-  dedupExchange,
   Exchange,
   fetchExchange,
   Provider as UrqlProvider,
@@ -60,7 +59,6 @@ function createNhostUrqlClient(options: NhostUrqlClientOptions) {
 
   let urqlExchanges: Exchange[] = [
     devtoolsExchange,
-    dedupExchange,
     refocusExchange(),
     cacheExchange,
     fetchExchange
@@ -100,7 +98,7 @@ function createNhostUrqlClient(options: NhostUrqlClientOptions) {
       subscriptionExchange({
         forwardSubscription: (operation) => ({
           subscribe: (sink) => ({
-            unsubscribe: wsClient.subscribe(operation, sink)
+            unsubscribe: wsClient.subscribe({ ...operation, query: operation.query || '' }, sink)
           })
         })
       })
